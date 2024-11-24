@@ -13,7 +13,7 @@ interface UserDao {
     suspend fun createUser(userEntity: UserEntity)
 
     @Query("SELECT * FROM user_table WHERE email = :email AND password = :password")
-    suspend fun getUser(email: String, password: String): Flow<UserEntity>?
+    fun getUser(email: String, password: String): Flow<UserEntity>?
 
     @Query("UPDATE user_table SET phoneNumber = :phoneNumber WHERE userId = :userId")
     suspend fun updatePhoneNumberToUserEntity(phoneNumber: Int?, userId: Int)

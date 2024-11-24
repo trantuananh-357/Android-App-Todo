@@ -1,6 +1,6 @@
 package com.example.android_todoapp.data.repository.impl
 
-import com.example.android_todoapp.data.repository.UserRepo
+import com.example.android_todoapp.data.repository.IUserRepo
 import com.example.android_todoapp.data.room.dao.UserDao
 import com.example.android_todoapp.data.room.entity.UserEntity
 import kotlinx.coroutines.Dispatchers
@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.withContext
 
-class UserRepoImpl(private val userDao: UserDao) : UserRepo {
+class UserRepoImpl(private val userDao: UserDao) : IUserRepo {
     override suspend fun createUser(userEntity: UserEntity) = withContext(Dispatchers.IO) {
         userDao.createUser(userEntity)
     }

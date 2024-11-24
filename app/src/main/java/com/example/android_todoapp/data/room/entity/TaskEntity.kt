@@ -3,7 +3,6 @@ package com.example.android_todoapp.data.room.entity
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import java.sql.Time
 
 @Entity(
     tableName = "task_table",
@@ -13,15 +12,16 @@ import java.sql.Time
             parentColumns = ["userId"],
             childColumns = ["userId"],
         )
-    ]
+    ],
+    indices = [androidx.room.Index(value = ["taskName"], unique = true)]
 )
 data class TaskEntity(
     @PrimaryKey(autoGenerate = true) val taskId: Int = 0,
     val taskName: String,
     val category: String,
-    val dateTime: java.sql.Date,
-    val startTime: Time,
-    val endTime: Time,
+    val dateTime: String,
+    val startTime: String,
+    val endTime: String,
     val description: String = "",
     val userId: Int
 )
