@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android-TodoApp</string>
+    <!--Home-->
+    <string name="home_title_today_task">Today’s Tasks</string>
 </resources>

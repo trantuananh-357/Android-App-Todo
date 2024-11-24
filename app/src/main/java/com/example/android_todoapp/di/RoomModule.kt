@@ -10,8 +10,8 @@ val roomModule = lazyModule {
         Room.databaseBuilder(
             App.getInstance(),
             DataBase::class.java,
-            "database"
-        ).build()
+            "todo_database"
+        ).fallbackToDestructiveMigration().build()
     }
 
     single { get<DataBase>().userDao }
