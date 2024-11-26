@@ -2,4 +2,8 @@
     <string name="app_name">Android-TodoApp</string>
     <!--Home-->
     <string name="home_title_today_task">Today’s Tasks</string>
+    <string name="home_title_tag_total">Total</string>
+    <string name="home_title_tag_work">Work</string>
+    <string name="home_title_tag_dailytask">Daily Task</string>
+    <string name="home_title_tag_study">Study</string>
 </resources>

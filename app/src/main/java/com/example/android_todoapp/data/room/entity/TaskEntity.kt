@@ -16,12 +16,13 @@ import androidx.room.PrimaryKey
     indices = [androidx.room.Index(value = ["taskName"], unique = true)]
 )
 data class TaskEntity(
-    @PrimaryKey(autoGenerate = true) val taskId: Int = 0,
+    @PrimaryKey(autoGenerate = true) val taskId: Long = 0,
     val taskName: String,
     val category: String,
     val dateTime: String,
     val startTime: String,
     val endTime: String,
+    val status : String,
     val description: String = "",
-    val userId: Int
+    val userId: Long
 )

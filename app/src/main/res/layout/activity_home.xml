@@ -89,7 +89,7 @@
             android:background="@drawable/bg_bottom_view"
             android:fontFamily="@font/inter_medium"
             android:gravity="center"
-            android:paddingVertical="@dimen/_14sdp"
+            android:paddingVertical="@dimen/_10sdp"
             android:text="Crete new task"
             android:textColor="@color/white"
             android:textSize="@dimen/_16ssp"
