@@ -11,4 +11,6 @@
     <color name="color_669747FF">#999747FF</color>
     <color name="primary_text_color">#000000</color>
     <color name="primary_background">#FFFFFF</color>
+    <color name="background_edit_text">#4DFFFFFF</color>
+
 </resources>

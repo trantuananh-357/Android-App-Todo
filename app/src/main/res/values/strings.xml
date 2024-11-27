@@ -1,9 +1,23 @@
 <resources>
-    <string name="app_name">Android-TodoApp</string>
+    <string name="app_name">TodoHive</string>
     <!--Home-->
     <string name="home_title_today_task">Today’s Tasks</string>
     <string name="home_title_tag_total">Total</string>
     <string name="home_title_tag_work">Work</string>
     <string name="home_title_tag_dailytask">Daily Task</string>
     <string name="home_title_tag_study">Study</string>
+    <!--Authent-->
+    <string name="sign_in_text_welcome_back">Welcome Back !</string>
+    <string name="sign_in_text_user_name">Username</string>
+    <string name="sign_in_text_password">Password</string>
+    <string name="sign_up_text_email">Email</string>
+    <string name="sign_up_text_confirm_password">Confirm Password</string>
+    <string name="sign_up_text_have_account">Already have an account?</string>
+
+    <string name="sign_in_text_login">Login</string>
+    <string name="sign_in_text_witch_google">Sign in with Google</string>
+    <string name="sign_in_text_do_not_have_account">Don’t have an account?</string>
+    <string name="sign_in_sign_up_title">Sign up</string>
+    <string name="sign_in_beta_title">Join our new beta program to test our new experimental feature</string>
+
 </resources>
