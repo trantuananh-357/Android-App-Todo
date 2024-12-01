@@ -6,4 +6,9 @@
     <string name="home_title_tag_work">Work</string>
     <string name="home_title_tag_dailytask">Daily Task</string>
     <string name="home_title_tag_study">Study</string>
+
+    <string name="setting_user_title_email">Email</string>
+    <string name="setting_user_title_phone">Phone</string>
+    <string name="setting_user_log_out">Log out</string>
+
 </resources>
