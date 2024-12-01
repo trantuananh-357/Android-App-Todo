@@ -3,6 +3,7 @@ package com.example.android_todoapp.data.room.entity
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import com.example.android_todoapp.model.TaskModel
 
 @Entity(
     tableName = "task_table",
@@ -25,4 +26,15 @@ data class TaskEntity(
     val status : String,
     val description: String = "",
     val userId: Long
-)
+) {
+    fun toTaskModel() = TaskModel(
+        id = taskId,
+        taskName = taskName,
+        category = category,
+        dateTime = dateTime,
+        startTime = startTime,
+        endTime = endTime,
+        status = status,
+        description = description
+    )
+}

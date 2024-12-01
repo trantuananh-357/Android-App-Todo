@@ -12,4 +12,8 @@ class SharePref(context: Context) {
     var language: String?
         get() = sharePref.getString(SharePrefConst.PREF_LANGUAGE_CODE, null)
         set(value) = sharePref.edit { putString(SharePrefConst.PREF_LANGUAGE_CODE, value) }
+
+    var currentUserId: Int
+        get() = sharePref.getInt(SharePrefConst.PREF_USER_ID, 0)
+        set(value) = sharePref.edit { putInt(SharePrefConst.PREF_USER_ID, value) }
 }
