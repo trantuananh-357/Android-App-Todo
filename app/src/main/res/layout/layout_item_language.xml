@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:background="@drawable/bg_radius_8"
+        android:backgroundTint="@color/color_F5F5F5">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgLanguage"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginVertical="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_en" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:fontFamily="@font/inter_medium"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgLanguage"
+            app:layout_constraintStart_toEndOf="@+id/imgLanguage"
+            app:layout_constraintTop_toTopOf="@+id/imgLanguage"
+            tools:text="English" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgSelector"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:src="@drawable/ic_selector"
+            app:layout_constraintBottom_toBottomOf="@+id/imgLanguage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgLanguage" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

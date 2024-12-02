@@ -11,4 +11,23 @@
     <string name="setting_user_title_phone">Phone</string>
     <string name="setting_user_log_out">Log out</string>
 
+
+    <string name="setting_title_profile">Profile</string>
+    <string name="setting_title_general">General</string>
+    <string name="setting_title_personal_info">Personal Info</string>
+    <string name="setting_title_personal_language">Language</string>
+    <string name="setting_title_personal_about">About</string>
+    <string name="setting_title_personal_help_center">Help Center</string>
+    <string name="setting_title_personal_privacy_policy">Privacy Policy</string>
+    <string name="setting_title_personal_privacy_logout">Logout</string>
+
+    <string name="setting_language_en" translatable="false">English</string>
+    <string name="setting_language_fr" translatable="false">Français</string>
+    <string name="setting_language_vn" translatable="false">Viet Nam</string>
+    <string name="setting_language_es" translatable="false">Española</string>
+    <string name="setting_language_zh" translatable="false">Chinese</string>
+    <string name="setting_language_pt" translatable="false">Português</string>
+    <string name="setting_language_ru" translatable="false">Русский</string>
+
+
 </resources>
