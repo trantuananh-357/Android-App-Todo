@@ -1,6 +1,5 @@
 package com.example.android_todoapp.ui.settinglanguage
 
-import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,8 +26,6 @@ class SettingLanguageActivity : BaseActivity<ActivitySettingLanguageBinding>() {
 
     override fun setupUI() {
         binding.rcvLanguage.adapter = settingLanguageAdapter
-        binding.rcvLanguage.layoutManager = LinearLayoutManager(this)
-
     }
 
     override fun setupListener() {
@@ -36,7 +33,6 @@ class SettingLanguageActivity : BaseActivity<ActivitySettingLanguageBinding>() {
             viewModel.setCurrentLanguage()
             if (viewModel.isChangeLanguage) {
                 setResult(RESULT_OK)
-                Log.d("djdjjdjd","RESULT_OK")
             }
             finish()
         }
