@@ -4,7 +4,9 @@ import com.apero.common.data.pref.SharePref
 import com.example.android_todoapp.data.repository.IDataRepo
 import com.example.android_todoapp.data.repository.ITaskRepo
 import com.example.android_todoapp.data.repository.IUserRepo
+import com.example.android_todoapp.data.repository.LanguageRepo
 import com.example.android_todoapp.data.repository.impl.DataRepoImpl
+import com.example.android_todoapp.data.repository.impl.LanguageRepoImpl
 import com.example.android_todoapp.data.repository.impl.TaskRepoImpl
 import com.example.android_todoapp.data.repository.impl.UserRepoImpl
 import org.koin.android.ext.koin.androidApplication
@@ -16,6 +18,7 @@ val repositoryModules = lazyModule {
     single { DataRepoImpl(get(), get()) } bind IDataRepo::class
     single { TaskRepoImpl(get()) } bind ITaskRepo::class
     single { UserRepoImpl(get()) } bind IUserRepo::class
+    single { LanguageRepoImpl(get()) } bind LanguageRepo::class
 }
 
 

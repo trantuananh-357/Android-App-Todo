@@ -29,6 +29,14 @@
             android:name=".ui.settinguser.SettingUserActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.settinglanguage.SettingLanguageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -139,6 +139,7 @@
             app:layout_constraintTop_toTopOf="@+id/imgLanguage" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtLanguage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_14sdp"
