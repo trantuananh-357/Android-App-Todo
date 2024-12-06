@@ -1,15 +1,18 @@
 package com.example.android_todoapp.ui.home
 
 import android.content.Intent
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.apero.common.data.pref.SharePref
 import com.example.android_todoapp.R
 import com.example.android_todoapp.base.BaseActivity
 import com.example.android_todoapp.databinding.ActivityHomeBinding
-import com.example.android_todoapp.model.DONE
+import com.example.android_todoapp.ui.dialog.action.ActionResult
+import com.example.android_todoapp.ui.dialog.action.DialogResult
 import com.example.android_todoapp.ui.edit.EditActivity
+import com.example.android_todoapp.ui.edit.EditActivity.Companion.ID_TASK_KEY
 import com.example.android_todoapp.ui.home.adapter.CategoriesTaskAdapter
 import com.example.android_todoapp.ui.home.adapter.TaskAdapter
 import com.example.android_todoapp.ui.setting.SettingActivity
@@ -17,7 +20,6 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
@@ -46,9 +48,22 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
     }
 
+    private val settingLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK && result.data?.getBooleanExtra(
+                IS_CHANGE_LANGUAGE,
+                false
+            ) == true
+        ) {
+            recreate()
+        }
+    }
+
     override fun setupListener() {
         binding.imgSetting.setOnClickListener {
-            startActivity(Intent(this, SettingActivity::class.java))
+            val intent = Intent(this, SettingActivity::class.java)
+            settingLauncher.launch(intent)
         }
 
         adapterCategoriesTask.onItemClick = { categoriesTaskModel ->
@@ -56,15 +71,28 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         }
 
         adapterTask.onRemoveClick = { taskModel ->
-            viewModel.removeTask(taskModel)
+            actionDialogResult(
+                ActionResult.Remove,
+                onPositiveClick = {
+                    viewModel.removeTask(taskModel)
+                },
+                isShowAds = false,
+            )
         }
 
         adapterTask.onStateClick = { taskModel ->
             viewModel.updateTask(taskModel)
         }
 
+        adapterTask.onItemClick = {
+            val intent = Intent(this, EditActivity::class.java)
+            intent.putExtra(ID_TASK_KEY, it.id)
+            startActivity(intent)
+        }
+
         binding.txtCreate.setOnClickListener {
-            startActivity(Intent(this, EditActivity::class.java))
+            val intent = Intent(this, EditActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -92,5 +120,30 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             .launchIn(lifecycleScope)
     }
 
+    private fun actionDialogResult(
+        contentDialog: ActionResult,
+        onPositiveClick: () -> Unit = {},
+        onNegativeClick: () -> Unit = {},
+        isShowAds: Boolean = false,
+        isShowContent: Boolean = false
+    ) {
+        DialogResult.newInstance(
+            contentDialog,
+            object : DialogResult.Listener {
+                override fun onPositiveClick() {
+                    onPositiveClick()
+                }
+
+                override fun onNegativeClick() {
+                    onNegativeClick()
+                }
+
+            }, isShowAds = isShowAds, isShowContent = isShowContent
+        ).show(supportFragmentManager, null)
+    }
+
+    companion object {
+        const val IS_CHANGE_LANGUAGE = "IS_CHANGE_LANGUAGE"
+    }
 
 }

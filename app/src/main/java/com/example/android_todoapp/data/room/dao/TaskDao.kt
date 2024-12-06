@@ -27,4 +27,7 @@ interface TaskDao {
 
     @Query("SELECT * FROM task_table WHERE category = :tag")
     fun getTasksByTag(tag: String): Flow<List<TaskEntity>>
+
+    @Query("SELECT * FROM task_table WHERE taskId = :id")
+    fun getTasksById(id: Long): Flow<TaskEntity>
 }

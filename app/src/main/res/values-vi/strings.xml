@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_title_sub">Sáng tạo, thân thiện và dễ sử dụng.</string>
+    <string name="splash_title_get_start">Bắt đầu ngay</string>
+    <!--Trang chủ-->
+    <string name="home_title_today_task">Công việc hôm nay</string>
+    <string name="home_title_tag_total">Tổng cộng</string>
+    <string name="home_title_tag_work">Công việc</string>
+    <string name="home_title_tag_dailytask">Công việc hàng ngày</string>
+    <string name="home_title_tag_study">Học tập</string>
+
+    <string name="setting_user_title_email">Email</string>
+    <string name="setting_user_title_phone">Số điện thoại</string>
+    <string name="setting_user_log_out">Đăng xuất</string>
+
+    <string name="setting_title_profile">Hồ sơ</string>
+    <string name="setting_title_general">Cài đặt chung</string>
+    <string name="setting_title_personal_info">Thông tin cá nhân</string>
+    <string name="setting_title_personal_language">Ngôn ngữ</string>
+    <string name="setting_title_personal_about">Giới thiệu</string>
+    <string name="setting_title_personal_help_center">Trung tâm trợ giúp</string>
+    <string name="setting_title_personal_privacy_policy">Chính sách bảo mật</string>
+    <string name="setting_title_personal_privacy_logout">Đăng xuất</string>
+
+    <string name="edit_title">Chỉnh sửa công việc</string>
+    <string name="edit_title_task_name">Tên công việc</string>
+    <string name="edit_title_description">Mô tả</string>
+    <string name="edit_title_date_time">Ngày &amp; giờ</string>
+    <string name="edit_title_start_time">Thời gian bắt đầu</string>
+    <string name="edit_title_end_time">Thời gian kết thúc</string>
+    <string name="edit_title_task_categories">Danh mục</string>
+    <string name="edit_title_task_status">Trạng thái</string>
+    <string name="edit_title_save_changes">Lưu thay đổi</string>
+    <string name="edit_title_hint_task_name">Nhập tên công việc</string>
+    <string name="edit_title_hint_description">Nhập mô tả</string>
+
+    <string name="dialog_result_action_no">Không</string>
+    <string name="dialog_save_change_title">Bạn có muốn lưu không?</string>
+    <string name="dialog_save_change_content">Tạo công việc của bạn để dễ dàng hơn</string>
+    <string name="dialog_save_change_action">Có</string>
+    <string name="dialog_exit_title">Bạn có muốn lưu trước khi thoát không?</string>
+    <string name="dialog_exit_content">Lưu trước khi thoát ngay</string>
+    <string name="dialog_exit_action">Lưu</string>
+    <string name="dialog_remove_title">Bạn có muốn xóa không?</string>
+    <string name="dialog_remove_content">Nó sẽ bị xóa vĩnh viễn</string>
+    <string name="dialog_remove_action">Có</string>
+    <string name="home_title_create">Tạo task mới</string>
+
+</resources>

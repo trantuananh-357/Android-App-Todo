@@ -48,7 +48,7 @@
             android:layout_marginStart="@dimen/_13sdp"
             android:layout_marginTop="@dimen/_13sdp"
             android:fontFamily="@font/inter_medium"
-            android:text="Hello Varun, \nyou have work today"
+            android:text="Hello Mrs/Sir, \nyou have work today"
             app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/imgAvatar" />
@@ -104,7 +104,7 @@
             android:fontFamily="@font/inter_medium"
             android:gravity="center"
             android:paddingVertical="@dimen/_10sdp"
-            android:text="Crete new task"
+            android:text="@string/home_title_create"
             android:textColor="@color/white"
             android:textSize="@dimen/_16ssp"
             app:layout_constraintBottom_toBottomOf="parent" />

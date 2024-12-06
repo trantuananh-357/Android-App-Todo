@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_title_sub">Inovador, fácil de usar e simples.</string>
+    <string name="splash_title_get_start">Começar</string>
+    <!--Início-->
+    <string name="home_title_today_task">Tarefas de hoje</string>
+    <string name="home_title_tag_total">Total</string>
+    <string name="home_title_tag_work">Trabalho</string>
+    <string name="home_title_tag_dailytask">Tarefas diárias</string>
+    <string name="home_title_tag_study">Estudo</string>
+
+    <string name="setting_user_title_email">E-mail</string>
+    <string name="setting_user_title_phone">Telefone</string>
+    <string name="setting_user_log_out">Sair</string>
+
+    <string name="setting_title_profile">Perfil</string>
+    <string name="setting_title_general">Geral</string>
+    <string name="setting_title_personal_info">Informações pessoais</string>
+    <string name="setting_title_personal_language">Idioma</string>
+    <string name="setting_title_personal_about">Sobre</string>
+    <string name="setting_title_personal_help_center">Central de ajuda</string>
+    <string name="setting_title_personal_privacy_policy">Política de privacidade</string>
+    <string name="setting_title_personal_privacy_logout">Sair</string>
+
+    <string name="edit_title">Editar tarefa</string>
+    <string name="edit_title_task_name">Nome da tarefa</string>
+    <string name="edit_title_description">Descrição</string>
+    <string name="edit_title_date_time">Data &amp; hora</string>
+    <string name="edit_title_start_time">Hora de início</string>
+    <string name="edit_title_end_time">Hora de término</string>
+    <string name="edit_title_task_categories">Categoria</string>
+    <string name="edit_title_task_status">Status</string>
+    <string name="edit_title_save_changes">Salvar alterações</string>
+    <string name="edit_title_hint_task_name">Digite o nome da tarefa</string>
+    <string name="edit_title_hint_description">Digite a descrição</string>
+
+    <string name="dialog_result_action_no">Não</string>
+    <string name="dialog_save_change_title">Você deseja salvar?</string>
+    <string name="dialog_save_change_content">Crie sua tarefa para facilitar as coisas</string>
+    <string name="dialog_save_change_action">Sim</string>
+    <string name="dialog_exit_title">Deseja salvar antes de sair?</string>
+    <string name="dialog_exit_content">Salve antes de sair agora</string>
+    <string name="dialog_exit_action">Salvar</string>
+    <string name="dialog_remove_title">Deseja remover?</string>
+    <string name="dialog_remove_content">Isso será removido para sempre</string>
+    <string name="dialog_remove_action">Sim</string>
+    <string name="home_title_create">Criar nova tarefa</string>
+
+</resources>

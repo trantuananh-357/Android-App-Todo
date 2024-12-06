@@ -9,7 +9,7 @@ import com.example.android_todoapp.model.TaskModel
 
 class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
     private val taskModels = mutableListOf<TaskModel>()
-    val onItemClick: (TaskModel) -> Unit = {}
+    var onItemClick: (TaskModel) -> Unit = {}
     var onRemoveClick: (TaskModel) -> Unit = {}
     var onStateClick: (TaskModel) -> Unit = {}
 
@@ -30,6 +30,10 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
                 imgStatus.setOnClickListener {
                     onStateClick(item)
+                }
+
+                imgEdit.setOnClickListener {
+                    onItemClick(item)
                 }
 
                 root.setOnClickListener {

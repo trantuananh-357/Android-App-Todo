@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_title_sub">Innovant, facile à utiliser et simple.</string>
+    <string name="splash_title_get_start">Commencer</string>
+    <!--Accueil-->
+    <string name="home_title_today_task">Tâches du jour</string>
+    <string name="home_title_tag_total">Total</string>
+    <string name="home_title_tag_work">Travail</string>
+    <string name="home_title_tag_dailytask">Tâches quotidiennes</string>
+    <string name="home_title_tag_study">Étude</string>
+
+    <string name="setting_user_title_email">Email</string>
+    <string name="setting_user_title_phone">Téléphone</string>
+    <string name="setting_user_log_out">Se déconnecter</string>
+
+    <string name="setting_title_profile">Profil</string>
+    <string name="setting_title_general">Général</string>
+    <string name="setting_title_personal_info">Informations personnelles</string>
+    <string name="setting_title_personal_language">Langue</string>
+    <string name="setting_title_personal_about">À propos</string>
+    <string name="setting_title_personal_help_center">Centre d\'aide</string>
+    <string name="setting_title_personal_privacy_policy">Politique de confidentialité</string>
+    <string name="setting_title_personal_privacy_logout">Se déconnecter</string>
+
+    <string name="edit_title">Modifier la tâche</string>
+    <string name="edit_title_task_name">Nom de la tâche</string>
+    <string name="edit_title_description">Description</string>
+    <string name="edit_title_date_time">Date &amp; heure</string>
+    <string name="edit_title_start_time">Heure de début</string>
+    <string name="edit_title_end_time">Heure de fin</string>
+    <string name="edit_title_task_categories">Catégorie</string>
+    <string name="edit_title_task_status">Statut</string>
+    <string name="edit_title_save_changes">Enregistrer les modifications</string>
+    <string name="edit_title_hint_task_name">Entrez le nom de la tâche</string>
+    <string name="edit_title_hint_description">Entrez la description</string>
+
+    <string name="dialog_result_action_no">Non</string>
+    <string name="dialog_save_change_title">Voulez-vous enregistrer ?</string>
+    <string name="dialog_save_change_content">Créez votre tâche pour simplifier les choses</string>
+    <string name="dialog_save_change_action">Oui</string>
+    <string name="dialog_exit_title">Voulez-vous enregistrer avant de quitter ?</string>
+    <string name="dialog_exit_content">Enregistrez avant de quitter maintenant</string>
+    <string name="dialog_exit_action">Enregistrer</string>
+    <string name="dialog_remove_title">Voulez-vous supprimer ?</string>
+    <string name="dialog_remove_content">Cela sera supprimé définitivement</string>
+    <string name="dialog_remove_action">Oui</string>
+    <string name="home_title_create">Créer une nouvelle tâche</string>
+
+</resources>

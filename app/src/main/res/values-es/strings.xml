@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_title_sub">Innovador, fácil de usar y sencillo.</string>
+    <string name="splash_title_get_start">Comenzar</string>
+    <!--Inicio-->
+    <string name="home_title_today_task">Tareas de hoy</string>
+    <string name="home_title_tag_total">Total</string>
+    <string name="home_title_tag_work">Trabajo</string>
+    <string name="home_title_tag_dailytask">Tareas diarias</string>
+    <string name="home_title_tag_study">Estudio</string>
+
+    <string name="setting_user_title_email">Correo electrónico</string>
+    <string name="setting_user_title_phone">Teléfono</string>
+    <string name="setting_user_log_out">Cerrar sesión</string>
+
+    <string name="setting_title_profile">Perfil</string>
+    <string name="setting_title_general">General</string>
+    <string name="setting_title_personal_info">Información personal</string>
+    <string name="setting_title_personal_language">Idioma</string>
+    <string name="setting_title_personal_about">Acerca de</string>
+    <string name="setting_title_personal_help_center">Centro de ayuda</string>
+    <string name="setting_title_personal_privacy_policy">Política de privacidad</string>
+    <string name="setting_title_personal_privacy_logout">Cerrar sesión</string>
+
+    <string name="edit_title">Editar tarea</string>
+    <string name="edit_title_task_name">Nombre de la tarea</string>
+    <string name="edit_title_description">Descripción</string>
+    <string name="edit_title_date_time">Fecha y hora</string>
+    <string name="edit_title_start_time">Hora de inicio</string>
+    <string name="edit_title_end_time">Hora de finalización</string>
+    <string name="edit_title_task_categories">Categoría</string>
+    <string name="edit_title_task_status">Estado</string>
+    <string name="edit_title_save_changes">Guardar cambios</string>
+    <string name="edit_title_hint_task_name">Escriba el nombre de la tarea</string>
+    <string name="edit_title_hint_description">Escriba la descripción</string>
+
+    <string name="dialog_result_action_no">No</string>
+    <string name="dialog_save_change_title">¿Quieres guardar?</string>
+    <string name="dialog_save_change_content">Crea tu tarea para facilitar las cosas</string>
+    <string name="dialog_save_change_action">Sí</string>
+    <string name="dialog_exit_title">¿Quieres guardar antes de salir?</string>
+    <string name="dialog_exit_content">Guarda antes de salir ahora</string>
+    <string name="dialog_exit_action">Guardar</string>
+    <string name="dialog_remove_title">¿Quieres eliminar?</string>
+    <string name="dialog_remove_content">Se eliminará para siempre</string>
+    <string name="dialog_remove_action">Sí</string>
+    <string name="home_title_create">Crear nueva tarea</string>
+
+</resources>

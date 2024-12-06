@@ -10,4 +10,5 @@ interface ITaskRepo {
     suspend fun deleteTask(toDoId: Int)
     fun getCountTaskInCategoryByTag(tag: String): Flow<Int>
     fun getTaskByTag(tag: String): Flow<List<TaskEntity>>
+    fun getTaskById(id: Long): Flow<TaskEntity>
 }

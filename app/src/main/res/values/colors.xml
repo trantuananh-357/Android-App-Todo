@@ -16,7 +16,10 @@
     <color name="color_9E9E9E">#9E9E9E</color>
     <color name="color_F75555">#F75555</color>
     <color name="color_F5F5F5">#F5F5F5</color>
-
+    <color name="color_797C80">#797C80</color>
+    <color name="color_1A1C1818">#1A1C1818</color>
+    <color name="color_AF1740">#AF1740</color>
+    <color name="color_26FFFFFF">#26FFFFFF</color>
 
     <color name="primary_text_color">#000000</color>
     <color name="primary_background">#FFFFFF</color>

@@ -11,7 +11,7 @@ import com.example.android_todoapp.databinding.LayoutItemCategoriesStatusBinding
 class EditItemAdapter(private val context: Context) :
     RecyclerView.Adapter<EditItemAdapter.EditItemViewHolder>() {
     private val editUiModels = mutableListOf<EditUIModel>()
-    private var currentItemSelected: Int = 0
+    private var currentItemSelected: Int = RecyclerView.NO_POSITION
     var onItemClick: (EditUIModel) -> Unit = {}
 
     inner class EditItemViewHolder(private val binding: LayoutItemCategoriesStatusBinding) :
@@ -62,5 +62,11 @@ class EditItemAdapter(private val context: Context) :
         notifyItemChanged(currentItemSelected)
     }
 
+    fun updateItemSelected(itemSelected: String) {
+        val lastSelected = currentItemSelected
+        currentItemSelected = editUiModels.indexOf(editUiModels.find { it.content == itemSelected })
+        notifyItemChanged(lastSelected)
+        notifyItemChanged(currentItemSelected)
+    }
 
 }

@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.android_todoapp.R
 import com.example.android_todoapp.base.BaseActivity
 import com.example.android_todoapp.databinding.ActivitySettingBinding
+import com.example.android_todoapp.ui.home.HomeActivity.Companion.IS_CHANGE_LANGUAGE
 import com.example.android_todoapp.ui.settinglanguage.SettingLanguageActivity
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.launchIn
@@ -24,6 +25,7 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>() {
             if (it.resultCode == Activity.RESULT_OK) {
                 recreate()
                 viewModel.getLanguageCurrent()
+                viewModel.setChangeLanguage()
             }
         }
 
@@ -38,6 +40,9 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>() {
     override fun setupListener() {
         binding.apply {
             imgBack.setOnClickListener {
+                setResult(RESULT_OK, Intent().apply {
+                    putExtra(IS_CHANGE_LANGUAGE, viewModel.changeLanguage)
+                })
                 finish()
             }
             vLogout.setOnClickListener {}

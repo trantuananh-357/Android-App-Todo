@@ -34,4 +34,8 @@ class TaskRepoImpl(private val taskDao: TaskDao) : ITaskRepo {
     override fun getTaskByTag(tag: String): Flow<List<TaskEntity>> {
         return taskDao.getTasksByTag(tag)
     }
+
+    override fun getTaskById(id: Long): Flow<TaskEntity> {
+        return taskDao.getTasksById(id)
+    }
 }

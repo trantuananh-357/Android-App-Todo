@@ -15,6 +15,8 @@ import com.example.android_todoapp.ui.edit.adapter.EditUIModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class EditViewModel(
@@ -25,16 +27,27 @@ class EditViewModel(
     private val _editUiState = MutableStateFlow(
         EditUiState(
             categoriesList = getCategoriesList(),
-            statusList = getStatusList()
+            statusList = getStatusList(),
+            currentTask = TaskModel()
         )
     )
+    val editUiState = _editUiState.asStateFlow()
 
-    private val idTask = savedStateHandle.getStateFlow<String?>(
+    private val idTask = savedStateHandle.getStateFlow<Long?>(
         ID_TASK_KEY, null
     )
-    var currentTask = TaskModel()
 
-    val editUiState = _editUiState.asStateFlow()
+    fun intiTaskEdit() {
+        if (idTask.value != null) {
+            viewModelScope.launch(Dispatchers.IO) {
+                taskRepo.getTaskById(idTask.value ?: 0L).map { taskEntity ->
+                    taskEntity.toTaskModel()
+                }.collect {
+                    onCurrentTaskUpdate(it)
+                }
+            }
+        }
+    }
 
     private fun getCategoriesList(): List<EditUIModel> {
         return listOf(
@@ -63,8 +76,20 @@ class EditViewModel(
 
     fun addTask() {
         viewModelScope.launch(Dispatchers.IO) {
-            Log.d("data", "addTask: ${currentTask}")
-            taskRepo.createTask(currentTask.toTaskEntity())
+            if (idTask.value != null) {
+                Log.d("data", "addTask: ${_editUiState.value.currentTask}")
+                taskRepo.updateTask(_editUiState.value.currentTask.toTaskEntity())
+            } else {
+                taskRepo.createTask(_editUiState.value.currentTask.toTaskEntity())
+            }
+        }
+    }
+
+    fun onCurrentTaskUpdate(item: TaskModel) {
+        _editUiState.update {
+            it.copy(
+                currentTask = item
+            )
         }
     }
 
@@ -72,5 +97,6 @@ class EditViewModel(
 
 data class EditUiState(
     val categoriesList: List<EditUIModel>,
-    val statusList: List<EditUIModel>
+    val statusList: List<EditUIModel>,
+    val currentTask: TaskModel
 )

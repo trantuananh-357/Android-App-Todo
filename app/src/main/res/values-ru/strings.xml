@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_title_sub">Инновационно, удобно и просто.</string>
+    <string name="splash_title_get_start">Начать</string>
+    <!--Главная-->
+    <string name="home_title_today_task">Задачи на сегодня</string>
+    <string name="home_title_tag_total">Всего</string>
+    <string name="home_title_tag_work">Работа</string>
+    <string name="home_title_tag_dailytask">Ежедневные задачи</string>
+    <string name="home_title_tag_study">Учёба</string>
+
+    <string name="setting_user_title_email">Электронная почта</string>
+    <string name="setting_user_title_phone">Телефон</string>
+    <string name="setting_user_log_out">Выйти</string>
+
+    <string name="setting_title_profile">Профиль</string>
+    <string name="setting_title_general">Общие</string>
+    <string name="setting_title_personal_info">Личная информация</string>
+    <string name="setting_title_personal_language">Язык</string>
+    <string name="setting_title_personal_about">О приложении</string>
+    <string name="setting_title_personal_help_center">Центр помощи</string>
+    <string name="setting_title_personal_privacy_policy">Политика конфиденциальности</string>
+    <string name="setting_title_personal_privacy_logout">Выйти</string>
+
+    <string name="edit_title">Редактировать задачу</string>
+    <string name="edit_title_task_name">Название задачи</string>
+    <string name="edit_title_description">Описание</string>
+    <string name="edit_title_date_time">Дата и время</string>
+    <string name="edit_title_start_time">Время начала</string>
+    <string name="edit_title_end_time">Время окончания</string>
+    <string name="edit_title_task_categories">Категория</string>
+    <string name="edit_title_task_status">Статус</string>
+    <string name="edit_title_save_changes">Сохранить изменения</string>
+    <string name="edit_title_hint_task_name">Введите название задачи</string>
+    <string name="edit_title_hint_description">Введите описание</string>
+
+    <string name="dialog_result_action_no">Нет</string>
+    <string name="dialog_save_change_title">Сохранить изменения?</string>
+    <string name="dialog_save_change_content">Создайте задачу, чтобы упростить работу</string>
+    <string name="dialog_save_change_action">Да</string>
+    <string name="dialog_exit_title">Сохранить перед выходом?</string>
+    <string name="dialog_exit_content">Сохраните изменения перед выходом</string>
+    <string name="dialog_exit_action">Сохранить</string>
+    <string name="dialog_remove_title">Удалить задачу?</string>
+    <string name="dialog_remove_content">Она будет удалена навсегда</string>
+    <string name="dialog_remove_action">Да</string>
+    <string name="home_title_create">Создать новую задачу</string>
+
+</resources>

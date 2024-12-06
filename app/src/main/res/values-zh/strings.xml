@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_title_sub">创新、用户友好且简单。</string>
+    <string name="splash_title_get_start">开始</string>
+    <!--主页-->
+    <string name="home_title_today_task">今日任务</string>
+    <string name="home_title_tag_total">总计</string>
+    <string name="home_title_tag_work">工作</string>
+    <string name="home_title_tag_dailytask">每日任务</string>
+    <string name="home_title_tag_study">学习</string>
+
+    <string name="setting_user_title_email">电子邮件</string>
+    <string name="setting_user_title_phone">电话</string>
+    <string name="setting_user_log_out">退出登录</string>
+
+    <string name="setting_title_profile">个人资料</string>
+    <string name="setting_title_general">常规</string>
+    <string name="setting_title_personal_info">个人信息</string>
+    <string name="setting_title_personal_language">语言</string>
+    <string name="setting_title_personal_about">关于</string>
+    <string name="setting_title_personal_help_center">帮助中心</string>
+    <string name="setting_title_personal_privacy_policy">隐私政策</string>
+    <string name="setting_title_personal_privacy_logout">退出登录</string>
+
+    <string name="edit_title">编辑任务</string>
+    <string name="edit_title_task_name">任务名称</string>
+    <string name="edit_title_description">描述</string>
+    <string name="edit_title_date_time">日期和时间</string>
+    <string name="edit_title_start_time">开始时间</string>
+    <string name="edit_title_end_time">结束时间</string>
+    <string name="edit_title_task_categories">类别</string>
+    <string name="edit_title_task_status">状态</string>
+    <string name="edit_title_save_changes">保存更改</string>
+    <string name="edit_title_hint_task_name">输入任务名称</string>
+    <string name="edit_title_hint_description">输入描述</string>
+
+    <string name="dialog_result_action_no">否</string>
+    <string name="dialog_save_change_title">是否保存？</string>
+    <string name="dialog_save_change_content">创建任务以简化操作</string>
+    <string name="dialog_save_change_action">是</string>
+    <string name="dialog_exit_title">退出前是否保存？</string>
+    <string name="dialog_exit_content">现在保存后退出</string>
+    <string name="dialog_exit_action">保存</string>
+    <string name="dialog_remove_title">是否删除？</string>
+    <string name="dialog_remove_content">将永久删除</string>
+    <string name="dialog_remove_action">是</string>
+    <string name="home_title_create">创建新任务</string>
+
+</resources>

@@ -12,7 +12,7 @@ class LanguageRepoImpl(
         return listOf(
             LanguageModel("en", R.string.setting_language_en, R.drawable.img_en),
             LanguageModel("fr", R.string.setting_language_fr, R.drawable.img_fr),
-            LanguageModel("vn", R.string.setting_language_vn, R.drawable.img_vn),
+            LanguageModel("vi", R.string.setting_language_vn, R.drawable.img_vn),
             LanguageModel("es", R.string.setting_language_es, R.drawable.img_es),
             LanguageModel("zh", R.string.setting_language_zh, R.drawable.img_zh),
             LanguageModel("pt", R.string.setting_language_pt, R.drawable.img_pt),

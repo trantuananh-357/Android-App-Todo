@@ -13,6 +13,12 @@ class SettingViewModel(
     private val _languageState = MutableStateFlow<LanguageModel?>(null)
     val languageState = _languageState.asStateFlow()
 
+    var changeLanguage: Boolean = false
+
+    fun setChangeLanguage() {
+        changeLanguage = true
+    }
+
     init {
         getLanguageCurrent()
     }

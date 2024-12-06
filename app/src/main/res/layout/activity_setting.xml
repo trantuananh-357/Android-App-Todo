@@ -13,10 +13,11 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgBack"
-            android:layout_width="@dimen/_14sdp"
-            android:layout_height="@dimen/_14sdp"
-            android:layout_marginStart="@dimen/_27sdp"
-            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:padding="@dimen/_10sdp"
             android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -59,21 +60,21 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_16sdp"
             android:fontFamily="@font/inter_bold"
+            android:text="Andrew Ainsley"
             android:textColor="@color/color_212121"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintStart_toEndOf="@+id/cvAvatar"
-            app:layout_constraintTop_toTopOf="@+id/cvAvatar"
-            tools:text="Andrew Ainsley" />
+            app:layout_constraintTop_toTopOf="@+id/cvAvatar" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_medium"
+            android:text="andrew.ainsley@yourdomain.com"
             android:textColor="@color/color_616161"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/cvAvatar"
-            app:layout_constraintStart_toStartOf="@+id/txtName"
-            tools:text="andrew.ainsley@yourdomain.com" />
+            app:layout_constraintStart_toStartOf="@+id/txtName" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txtGeneral"
@@ -93,6 +94,7 @@
             android:layout_height="@dimen/_22sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:src="@drawable/ic_user"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/txtGeneral"
             app:layout_constraintTop_toBottomOf="@+id/txtGeneral" />
 
@@ -104,6 +106,7 @@
             android:text="@string/setting_title_personal_info"
             android:textColor="@color/color_212121"
             android:textSize="@dimen/_14ssp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/imgUser"
             app:layout_constraintStart_toEndOf="@+id/imgUser"
             app:layout_constraintTop_toTopOf="@+id/imgUser" />
@@ -113,6 +116,7 @@
             android:layout_height="@dimen/_22sdp"
             android:layout_marginEnd="@dimen/_14sdp"
             android:src="@drawable/ic_next"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/imgUser"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imgUser" />
@@ -269,6 +273,7 @@
             android:layout_height="@dimen/_22sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:src="@drawable/ic_logout"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/imgAbout"
             app:layout_constraintTop_toBottomOf="@+id/imgAbout" />
 
@@ -280,6 +285,7 @@
             android:text="@string/setting_title_personal_privacy_logout"
             android:textColor="@color/color_F75555"
             android:textSize="@dimen/_14ssp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/imgLogout"
             app:layout_constraintStart_toEndOf="@+id/imgLogout"
             app:layout_constraintTop_toTopOf="@+id/imgLogout" />
@@ -289,6 +295,7 @@
             android:id="@+id/vPersonal"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/imgUser"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -334,6 +341,7 @@
             android:id="@+id/vLogout"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/imgLogout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

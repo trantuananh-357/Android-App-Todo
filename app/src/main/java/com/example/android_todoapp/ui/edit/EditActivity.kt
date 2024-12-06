@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.EditText
+import androidx.activity.addCallback
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
@@ -14,11 +15,14 @@ import androidx.lifecycle.lifecycleScope
 import com.example.android_todoapp.R
 import com.example.android_todoapp.base.BaseActivity
 import com.example.android_todoapp.databinding.ActivityEditTaskBinding
+import com.example.android_todoapp.ui.dialog.action.ActionResult
+import com.example.android_todoapp.ui.dialog.action.DialogResult
 import com.example.android_todoapp.ui.edit.adapter.EditItemAdapter
+import com.example.android_todoapp.ui.edit.adapter.EditUIModel
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.newFixedThreadPoolContext
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.Calendar
 import java.util.Locale
@@ -41,6 +45,7 @@ class EditActivity : BaseActivity<ActivityEditTaskBinding>() {
     }
 
     override fun setupUI() {
+        viewModel.intiTaskEdit()
         binding.rvCategories.apply {
             itemAnimator = null
             adapter = categoriesAdapter
@@ -50,29 +55,57 @@ class EditActivity : BaseActivity<ActivityEditTaskBinding>() {
             itemAnimator = null
             adapter = statusAdapter
         }
+
+        onBackPressedDispatcher.addCallback {
+            actionDialogResult(
+                ActionResult.Exit,
+                onNegativeClick = {
+                    finish()
+                },
+                onPositiveClick = {
+                    viewModel.addTask()
+                    this@EditActivity.finish()
+                },
+                isShowAds = false,
+            )
+        }
     }
 
     override fun setupListener() {
         categoriesAdapter.onItemClick = {
             categoriesAdapter.updateItemSelected(it)
-            viewModel.currentTask = viewModel.currentTask.copy(
-                category = it.content
+            viewModel.onCurrentTaskUpdate(
+                viewModel.editUiState.value.currentTask.copy(
+                    category = it.content
+                )
             )
         }
 
         statusAdapter.onItemClick = {
             statusAdapter.updateItemSelected(it)
-            viewModel.currentTask = viewModel.currentTask.copy(
-                status = it.content
+            viewModel.onCurrentTaskUpdate(
+                viewModel.editUiState.value.currentTask.copy(
+                    status = it.content
+                )
             )
         }
 
         binding.imgBack.setOnClickListener {
-            finish()
+            onBackPressedDispatcher.onBackPressed()
         }
 
         binding.txtSaveChanges.setOnClickListener {
-            viewModel.addTask()
+            actionDialogResult(
+                ActionResult.SaveChange,
+                onNegativeClick = {
+
+                },
+                onPositiveClick = {
+                    viewModel.addTask()
+                    this@EditActivity.finish()
+                },
+                isShowAds = false,
+            )
         }
 
         val calendar = Calendar.getInstance()
@@ -94,8 +127,10 @@ class EditActivity : BaseActivity<ActivityEditTaskBinding>() {
             }
 
             addTextChangedListener {
-                viewModel.currentTask = viewModel.currentTask.copy(
-                    dateTime = it.toString()
+                viewModel.onCurrentTaskUpdate(
+                    viewModel.editUiState.value.currentTask.copy(
+                        dateTime = it.toString()
+                    )
                 )
             }
         }
@@ -103,14 +138,18 @@ class EditActivity : BaseActivity<ActivityEditTaskBinding>() {
         setUpTime(binding.edtEndTime, calendar)
 
         binding.edtTaskName.addTextChangedListener {
-            viewModel.currentTask = viewModel.currentTask.copy(
-                taskName = it.toString()
+            viewModel.onCurrentTaskUpdate(
+                viewModel.editUiState.value.currentTask.copy(
+                    taskName = it.toString()
+                )
             )
         }
 
         binding.edtDescription.addTextChangedListener {
-            viewModel.currentTask = viewModel.currentTask.copy(
-                description = it.toString()
+            viewModel.onCurrentTaskUpdate(
+                viewModel.editUiState.value.currentTask.copy(
+                    description = it.toString()
+                )
             )
         }
     }
@@ -134,6 +173,21 @@ class EditActivity : BaseActivity<ActivityEditTaskBinding>() {
                 it.statusList
             }.onEach {
                 statusAdapter.setData(it)
+            }
+            .flowWithLifecycle(lifecycle, Lifecycle.State.CREATED)
+            .launchIn(lifecycleScope)
+
+        viewModel.editUiState
+            .map { it.currentTask }
+            .distinctUntilChanged()
+            .onEach {
+                binding.edtTaskName.setText(it.taskName)
+                binding.edtDescription.setText(it.description)
+                binding.edtDate.setText(it.dateTime)
+                binding.edtStartTime.setText(it.startTime)
+                binding.edtEndTime.setText(it.endTime)
+                statusAdapter.updateItemSelected(it.status)
+                categoriesAdapter.updateItemSelected(it.category)
             }
             .flowWithLifecycle(lifecycle, Lifecycle.State.CREATED)
             .launchIn(lifecycleScope)
@@ -209,14 +263,18 @@ class EditActivity : BaseActivity<ActivityEditTaskBinding>() {
             addTextChangedListener {
                 when (editView) {
                     binding.edtStartTime -> {
-                        viewModel.currentTask = viewModel.currentTask.copy(
-                            startTime = it.toString()
+                        viewModel.onCurrentTaskUpdate(
+                            viewModel.editUiState.value.currentTask.copy(
+                                startTime = it.toString()
+                            )
                         )
                     }
 
                     binding.edtEndTime -> {
-                        viewModel.currentTask = viewModel.currentTask.copy(
-                            endTime = it.toString()
+                        viewModel.onCurrentTaskUpdate(
+                            viewModel.editUiState.value.currentTask.copy(
+                                endTime = it.toString()
+                            )
                         )
                     }
                 }
@@ -224,7 +282,25 @@ class EditActivity : BaseActivity<ActivityEditTaskBinding>() {
         }
     }
 
-    private fun updateTaskCurrent() {
+    private fun actionDialogResult(
+        contentDialog: ActionResult,
+        onPositiveClick: () -> Unit = {},
+        onNegativeClick: () -> Unit = {},
+        isShowAds: Boolean = false,
+        isShowContent: Boolean = false
+    ) {
+        DialogResult.newInstance(
+            contentDialog,
+            object : DialogResult.Listener {
+                override fun onPositiveClick() {
+                    onPositiveClick()
+                }
 
+                override fun onNegativeClick() {
+                    onNegativeClick()
+                }
+
+            }, isShowAds = isShowAds, isShowContent = isShowContent
+        ).show(supportFragmentManager, null)
     }
 }
