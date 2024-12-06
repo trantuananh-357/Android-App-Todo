@@ -9,6 +9,14 @@
     <color name="color_B4C4FF">#B4C4FF</color>
     <color name="color_EDBE7D">#99EDBE7D</color>
     <color name="color_669747FF">#999747FF</color>
+    <color name="color_444444">#444444</color>
+    <color name="color_212121">#212121</color>
+    <color name="color_616161">#616161</color>
+    <color name="color_9E9E9E">#9E9E9E</color>
+    <color name="color_F75555">#F75555</color>
+    <color name="color_F5F5F5">#F5F5F5</color>
+
+
     <color name="primary_text_color">#000000</color>
     <color name="primary_background">#FFFFFF</color>
     <color name="color_554447">#554447</color>
