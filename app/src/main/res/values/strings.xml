@@ -11,7 +11,6 @@
     <string name="setting_user_title_phone">Phone</string>
     <string name="setting_user_log_out">Log out</string>
 
-
     <string name="setting_title_profile">Profile</string>
     <string name="setting_title_general">General</string>
     <string name="setting_title_personal_info">Personal Info</string>
@@ -28,6 +27,4 @@
     <string name="setting_language_zh" translatable="false">Chinese</string>
     <string name="setting_language_pt" translatable="false">Português</string>
     <string name="setting_language_ru" translatable="false">Русский</string>
-
-
 </resources>
