@@ -16,6 +16,9 @@ interface TaskDao {
     @Query("SELECT * FROM task_table WHERE userId = :userId AND taskId = :taskId")
     fun getListTasks(userId: Int, taskId: Int): Flow<List<TaskEntity>>
 
+    @Query("SELECT * FROM task_table WHERE userId = :userId")
+    fun getAllTasksByUserId(userId: Int): Flow<List<TaskEntity>>
+
     @Update
     suspend fun updateTask(taskEntity: TaskEntity)
 
@@ -24,4 +27,7 @@ interface TaskDao {
 
     @Query("SELECT COUNT(*) FROM task_table WHERE category = :tag")
     fun getCountTaskInCategoryByTag(tag: String): Flow<Int>
+
+    @Query("SELECT * FROM task_table WHERE category = :tag")
+    fun getTasksByTag(tag: String): Flow<List<TaskEntity>>
 }

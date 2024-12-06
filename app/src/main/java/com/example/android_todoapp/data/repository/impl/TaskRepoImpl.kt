@@ -18,6 +18,10 @@ class TaskRepoImpl(private val taskDao: TaskDao) : ITaskRepo {
         return taskDao.getListTasks(userId, taskId).flowOn(Dispatchers.IO)
     }
 
+    override fun getAllTasksByUserId(userId: Int): Flow<List<TaskEntity>> {
+        return taskDao.getAllTasksByUserId(userId).flowOn(Dispatchers.IO)
+    }
+
     override suspend fun updateTask(taskEntity: TaskEntity) =
         withContext(Dispatchers.IO) {
             taskDao.updateTask(taskEntity)
@@ -29,5 +33,9 @@ class TaskRepoImpl(private val taskDao: TaskDao) : ITaskRepo {
 
     override fun getCountTaskInCategoryByTag(tag: String): Flow<Int> {
         return taskDao.getCountTaskInCategoryByTag(tag)
+    }
+
+    override fun getTaskByTag(tag: String): Flow<List<TaskEntity>> {
+        return taskDao.getTasksByTag(tag)
     }
 }

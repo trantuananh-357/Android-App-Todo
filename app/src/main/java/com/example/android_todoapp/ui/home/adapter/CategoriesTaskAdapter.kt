@@ -13,6 +13,7 @@ import com.example.android_todoapp.model.CategoriesTaskModel
 class CategoriesTaskAdapter(private val context: Context) :
     RecyclerView.Adapter<CategoriesTaskAdapter.CategoriesTaskViewHolder>() {
     private val categoriesTaskModels = mutableListOf<CategoriesTaskModel>()
+    var onItemClick : (CategoriesTaskModel) -> Unit = {}
 
     inner class CategoriesTaskViewHolder(private val binding: LayoutItemCategoryTaskBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -22,6 +23,10 @@ class CategoriesTaskAdapter(private val context: Context) :
                 txtTitleCategoryTask.setText(item.title)
                 txtCountTask.text = String.format(item.totalTask.toString())
                 ctlBackground.setBackgroundColor(ContextCompat.getColor(context, listColor[position % 4]))
+
+                root.setOnClickListener {
+                    onItemClick(item)
+                }
             }
         }
     }
