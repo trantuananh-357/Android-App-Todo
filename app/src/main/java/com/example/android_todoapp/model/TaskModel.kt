@@ -4,16 +4,16 @@ import androidx.annotation.StringDef
 import com.example.android_todoapp.data.room.entity.TaskEntity
 
 data class TaskModel(
-    val id: Long,
-    val taskName: String,
-    val category: String,
-    val dateTime: String,
-    val startTime: String,
-    @StateStatusTask val status: String,
-    val endTime: String,
+    val id: Long = 0L,
+    val taskName: String = "",
+    val category: String = WORK,
+    val dateTime: String = "",
+    val startTime: String = "",
+    @StateStatusTask val status: String = TODO,
+    val endTime: String = "",
     val description: String = "",
 ) {
-    fun toTaskEntity(userId : Int) = TaskEntity(
+    fun toTaskEntity() = TaskEntity(
         taskId = id,
         taskName = taskName,
         category = category,
@@ -22,7 +22,6 @@ data class TaskModel(
         status = status,
         endTime = endTime,
         description = description,
-        userId = userId.toLong()
     )
 }
 

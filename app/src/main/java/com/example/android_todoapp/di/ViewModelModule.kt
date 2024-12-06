@@ -1,5 +1,6 @@
 package com.example.android_todoapp.di
 
+import com.example.android_todoapp.ui.edit.EditViewModel
 import com.example.android_todoapp.ui.home.HomeViewModel
 import com.example.android_todoapp.ui.setting.SettingViewModel
 import com.example.android_todoapp.ui.settinglanguage.SettingLanguageViewModel
@@ -15,5 +16,9 @@ val viewModelModule = lazyModule {
     }
     viewModel {
         SettingLanguageViewModel(get(), get())
+    }
+
+    viewModel {
+        EditViewModel(get(), get())
     }
 }

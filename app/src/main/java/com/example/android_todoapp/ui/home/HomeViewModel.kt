@@ -81,7 +81,7 @@ class HomeViewModel(private val taskRepo: ITaskRepo, private val pref : SharePre
     }
 
     fun initDataTaskModel() {
-        taskRepo.getAllTasksByUserId(1)
+        taskRepo.getAllTasks()
             .map { taskEntities ->
                 _homeUiState.value.copy(
                     taskModels = taskEntities.map { it.toTaskModel() }
@@ -135,7 +135,7 @@ class HomeViewModel(private val taskRepo: ITaskRepo, private val pref : SharePre
     fun updateTask(taskModel: TaskModel) {
         viewModelScope.launch(Dispatchers.IO) {
             val newTaskModel = taskModel.copy(status = if (taskModel.status == DONE) com.example.android_todoapp.model.TODO else DONE)
-                .toTaskEntity(pref.currentUserId)
+                .toTaskEntity()
 
             taskRepo.updateTask(newTaskModel)
         }

@@ -27,4 +27,17 @@
     <string name="setting_language_zh" translatable="false">Chinese</string>
     <string name="setting_language_pt" translatable="false">Português</string>
     <string name="setting_language_ru" translatable="false">Русский</string>
+
+    <string name="edit_title">Edit your task</string>
+    <string name="edit_title_task_name">Task Name</string>
+    <string name="edit_title_description">Description</string>
+    <string name="edit_title_date_time">Date &amp; Time</string>
+    <string name="edit_title_start_time">Start time</string>
+    <string name="edit_title_end_time">End time</string>
+    <string name="edit_title_task_categories">Category</string>
+    <string name="edit_title_task_status">Status</string>
+    <string name="edit_title_save_changes">Save changes</string>
+    <string name="edit_title_hint_task_name">Type task name</string>
+    <string name="edit_title_hint_description">Type description</string>
+
 </resources>

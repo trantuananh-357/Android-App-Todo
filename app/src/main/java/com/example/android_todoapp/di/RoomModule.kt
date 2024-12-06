@@ -14,6 +14,5 @@ val roomModule = lazyModule {
         ).fallbackToDestructiveMigration().build()
     }
 
-    single { get<DataBase>().userDao }
     single { get<DataBase>().toDoDao }
 }

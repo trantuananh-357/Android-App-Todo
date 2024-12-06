@@ -14,12 +14,8 @@ class TaskRepoImpl(private val taskDao: TaskDao) : ITaskRepo {
         taskDao.createTask(taskEntity)
     }
 
-    override fun getListTasks(userId: Int, taskId: Int): Flow<List<TaskEntity>> {
-        return taskDao.getListTasks(userId, taskId).flowOn(Dispatchers.IO)
-    }
-
-    override fun getAllTasksByUserId(userId: Int): Flow<List<TaskEntity>> {
-        return taskDao.getAllTasksByUserId(userId).flowOn(Dispatchers.IO)
+    override fun getAllTasks(): Flow<List<TaskEntity>> {
+        return taskDao.getAllTasks().flowOn(Dispatchers.IO)
     }
 
     override suspend fun updateTask(taskEntity: TaskEntity) =
