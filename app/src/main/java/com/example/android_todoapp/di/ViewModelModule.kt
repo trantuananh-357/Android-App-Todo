@@ -9,7 +9,7 @@ import org.koin.dsl.lazyModule
 
 val viewModelModule = lazyModule {
     viewModel {
-        HomeViewModel(get(), get())
+        HomeViewModel(get(), get(), get())
     }
     viewModel {
         SettingViewModel(get())
@@ -19,6 +19,6 @@ val viewModelModule = lazyModule {
     }
 
     viewModel {
-        EditViewModel(get(), get())
+        EditViewModel(get(), get(), get())
     }
 }

@@ -2,6 +2,7 @@ package com.example.android_todoapp
 
 import android.app.Application
 import com.example.android_todoapp.di.appModules
+import com.example.android_todoapp.notification.NotificationService
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -28,7 +29,8 @@ class App : Application() {
 
         KoinPlatform.getKoin().apply {
             waitAllStartJobs()
-            runOnKoinStarted { _ ->
+            runOnKoinStarted { koin ->
+                koin.get<NotificationService>().createNotificationChannel()
             }
         }
     }

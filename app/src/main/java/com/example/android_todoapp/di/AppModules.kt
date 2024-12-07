@@ -7,4 +7,5 @@ val appModules : List<Lazy<Module>> = buildList {
     add(viewModelModule)
     add(roomModule)
     add(repositoryModules)
+    add(notificationModule)
 }
