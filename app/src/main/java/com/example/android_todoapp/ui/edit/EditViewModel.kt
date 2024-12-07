@@ -5,11 +5,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.android_todoapp.data.repository.ITaskRepo
-import com.example.android_todoapp.model.DAILY_TASK
-import com.example.android_todoapp.model.DONE
-import com.example.android_todoapp.model.STUDY
-import com.example.android_todoapp.model.TaskModel
-import com.example.android_todoapp.model.WORK
+import com.example.android_todoapp.model.*
 import com.example.android_todoapp.ui.edit.EditActivity.Companion.ID_TASK_KEY
 import com.example.android_todoapp.ui.edit.adapter.EditUIModel
 import kotlinx.coroutines.Dispatchers
@@ -21,7 +17,8 @@ import kotlinx.coroutines.launch
 
 class EditViewModel(
     private val savedStateHandle: SavedStateHandle,
-    private val taskRepo: ITaskRepo
+    private val taskRepo: ITaskRepo,
+    private val taskScheduler: TaskScheduler
 ) : ViewModel() {
 
     private val _editUiState = MutableStateFlow(
@@ -66,7 +63,7 @@ class EditViewModel(
     private fun getStatusList(): List<EditUIModel> {
         return listOf(
             EditUIModel(
-                content = com.example.android_todoapp.model.TODO
+                content = TODO
             ),
             EditUIModel(
                 content = DONE
@@ -82,6 +79,7 @@ class EditViewModel(
             } else {
                 taskRepo.createTask(_editUiState.value.currentTask.toTaskEntity())
             }
+            taskScheduler.scheduleTask(_editUiState.value.currentTask)
         }
     }
 

@@ -16,6 +16,7 @@ import com.example.android_todoapp.ui.edit.EditActivity.Companion.ID_TASK_KEY
 import com.example.android_todoapp.ui.home.adapter.CategoriesTaskAdapter
 import com.example.android_todoapp.ui.home.adapter.TaskAdapter
 import com.example.android_todoapp.ui.setting.SettingActivity
+import com.example.android_todoapp.worker.helper.PermissionHelper
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
@@ -45,6 +46,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             itemAnimator = null
             adapter = adapterTask
         }
+        PermissionHelper(this).checkAndRequestPermissions()
 
     }
 
