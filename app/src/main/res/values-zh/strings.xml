@@ -45,5 +45,7 @@
     <string name="dialog_remove_content">将永久删除</string>
     <string name="dialog_remove_action">是</string>
     <string name="home_title_create">创建新任务</string>
+    <string name="edit_title_hint_start_time">输入开始时间</string>
+    <string name="edit_title_hint_end_time">输入结束时间</string>
 
 </resources>

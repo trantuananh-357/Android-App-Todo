@@ -42,6 +42,8 @@
     <string name="edit_title_task_status">Status</string>
     <string name="edit_title_save_changes">Save changes</string>
     <string name="edit_title_hint_task_name">Type task name</string>
+    <string name="edit_title_hint_start_time">Type start time</string>
+    <string name="edit_title_hint_end_time">Type end time</string>
     <string name="edit_title_hint_description">Type description</string>
 
     <string name="dialog_result_action_no">No</string>
@@ -55,6 +57,6 @@
     <string name="dialog_remove_content">It\'s will be remove forever</string>
     <string name="dialog_remove_action">Yes</string>
 
-    <string name="home_title_create">Crete new task</string>
+    <string name="home_title_create">Create new task</string>
 
 </resources>

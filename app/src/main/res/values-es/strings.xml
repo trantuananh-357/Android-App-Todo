@@ -45,5 +45,7 @@
     <string name="dialog_remove_content">Se eliminará para siempre</string>
     <string name="dialog_remove_action">Sí</string>
     <string name="home_title_create">Crear nueva tarea</string>
+    <string name="edit_title_hint_start_time">Escribe la hora de inicio</string>
+    <string name="edit_title_hint_end_time">Escribe la hora de finalización</string>
 
 </resources>

@@ -45,5 +45,7 @@
     <string name="dialog_remove_content">Cela sera supprimé définitivement</string>
     <string name="dialog_remove_action">Oui</string>
     <string name="home_title_create">Créer une nouvelle tâche</string>
+    <string name="edit_title_hint_start_time">Entrez l\'heure de début</string>
+    <string name="edit_title_hint_end_time">Entrez l\'heure de fin</string>
 
 </resources>

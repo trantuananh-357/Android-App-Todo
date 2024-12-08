@@ -45,5 +45,7 @@
     <string name="dialog_remove_content">Isso será removido para sempre</string>
     <string name="dialog_remove_action">Sim</string>
     <string name="home_title_create">Criar nova tarefa</string>
+    <string name="edit_title_hint_start_time">Digite a hora de início</string>
+    <string name="edit_title_hint_end_time">Digite a hora de término</string>
 
 </resources>
